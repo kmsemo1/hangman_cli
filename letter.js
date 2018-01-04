@@ -1,9 +1,4 @@
-/* Letter constructor
-*  stores letter as a capital
-* & controls whether to display or not
-* @param {string} ltr - Required. A single letter
-* @param {bool} displayBool - optional. Default is false.
-*/
+// letter constructor
 function Letter(ltr, displayBool){
     this.display = displayBool || false;
     this.letter;
