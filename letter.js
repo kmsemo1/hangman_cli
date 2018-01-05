@@ -1,24 +1,30 @@
-// letter constructor
-function Letter(ltr, displayBool){
-    this.display = displayBool || false;
-    this.letter;
-    this.init(ltr);
-}
+//letter.js SHOULD BE A CONSTRUCTOR FILE.
+//letter.js SHOULD CONTROL WETHER OR NOT A LETTER APPEARS AS A "_" OR AS ITSELF ON-SCREEN.
 
-// Letter Methods:
-Letter.prototype.init = function(ltr){
-  if (ltr == " "){
-    this.display = true;
-    this.letter = "//";
+//console.log("RAMIRO THIS IS LETTER");
+
+//THIS IS A PROTOYPE WHICH PRINTS THE LETTER IF IT IS CORRECTLY GUESSED IF NOT IT WILL HAVE A -
+Letter.prototype.printLetra = function() {
+  if (this.show) {
+      return this.letter;
   } else {
-    this.letter = ltr.toString().toUpperCase();
+      return '-';
+  }
+};
+
+//THIS FUNCTION TAKES IN A LETTER AND COMPARES IT TO A BLANK SPACE == " "
+function Letter(letter) {
+  this.letter = letter;
+  if (this.letter == ' ') {
+      this.show = true;
+  } else {
+      this.show = false;
   }
 }
 
-Letter.prototype.show = function(){
-    this.display = true;
-}
 
+//THIS WILL EXPORT THE FUNCTION "Letter" TO THE FILE INQUIRING IT
 
-// Export Object
-module.exports = Letter;
+module.exports = {
+  Letter
+};
