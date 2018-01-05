@@ -1,3 +1,5 @@
 //  randomly choosing words
 
-// using MovieDB api
+// using node for wordGame.js and inquirer
+var MovieDB = require('./wordGame');
+var inquirer = require('inquirer');
