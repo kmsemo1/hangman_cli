@@ -25,22 +25,20 @@ function userPrompt(ready) {
 
 //THIS MAKES THE CALL TO THEMOVIEDB.ORG DATABASE TO GET THE MOVIE INFROMATION THAT WILL BE USED FOR THE GAME.
 function getMovies(actorID, cb) {
-      var results = res.results;
-      for (var i = 0; i < results.length; i++) {
-          var title = results[i].title;
-          //THIS RULE HERE WILL EXCLUDE ANY TITLE WITH THESE TYPES OF CHARACTERS.
-          if (/^[a-zA-Z ]*$/g.test(title)) {
-              wordArr.push(title);
-          }
-      }
-      // random word from wordGame.js
-      var randomWord = Math.floor(Math.random() * wordArr.length);
-      randomNumber -= 1;
-      var chosenWord = wordArr[randomNumber];
-      module.exports.chosenWord = chosenWord;
-      cb();
-  });
-}
+  var wordArr = [];
+    //THIS RULE HERE WILL EXCLUDE ANY TITLE WITH THESE TYPES OF CHARACTERS.
+    if (/^[a-zA-Z ]*$/g.test(title)) {
+      moviesArr.push(title);
+    }
+  }
+  // function to pull random word from wordGame.js
+  var randomNumber = Math.floor(Math.random() * moviesArr.length);
+  randomNumber -= 1;
+  var chosenWord = moviesArr[randomNumber];
+  module.exports.chosenWord = chosenWord;
+  cb();
+};
+
 
 
 
