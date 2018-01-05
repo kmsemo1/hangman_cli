@@ -26,6 +26,8 @@ function userPrompt(ready) {
 //THIS MAKES THE CALL TO THEMOVIEDB.ORG DATABASE TO GET THE MOVIE INFROMATION THAT WILL BE USED FOR THE GAME.
 function getMovies(actorID, cb) {
   var wordArr = [];
+  for (var i = 0; i < results.length; i++) {
+    var title = results[i].title;
     //THIS RULE HERE WILL EXCLUDE ANY TITLE WITH THESE TYPES OF CHARACTERS.
     if (/^[a-zA-Z ]*$/g.test(title)) {
       moviesArr.push(title);
